@@ -9,7 +9,7 @@ export default async (_req, res) => {
     } catch (error) {
       console.error(err);
       res.status(500).json({ msg: "Something went wrong!" });
-    }
+    };
   };
 
   
