@@ -2,14 +2,14 @@ const Airtable = require("airtable");
 
 // Initialize a base
 Airtable.configure({
-  apiKey: process.env.AIRTABLE_API_KEY,
+  apiKey: "keyQlwTlTACyFSsir",
 });
 
 // Initialize a base
-const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
+const base = Airtable.base("appqFJvywXljIvmBp");
 
 // Reference a table
-const table = base(process.env.AIRTABLE_TABLE_NAME);
+const table = base("Table2");
 
 const minifyItems = (records) =>
   records.map((record) => getMinifiedItem(record));
