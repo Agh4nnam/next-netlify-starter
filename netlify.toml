@@ -3,4 +3,4 @@
   publish = ".next"
 
 [[plugins]]
-  package = "./package-lock.json"
+  package = "@netlify/plugin-nextjs"

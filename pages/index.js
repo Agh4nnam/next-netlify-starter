@@ -1,7 +1,7 @@
-import {table, minifyItems} from "./airtable";
+import {table, minifyItems} from "../util/airtable";
 
 
-export default function Home({data}) {
+export default function Home({ data }) {
 
   console.log(data);
   return (
