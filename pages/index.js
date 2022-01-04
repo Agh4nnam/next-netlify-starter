@@ -1,23 +1,30 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import {table, minifyItems} from "./airtable";
 
-export default function Home() {
+
+export default function Home({data}) {
+
+  console.log(data);
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main>
-        <Header title="Test edit" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <Footer />
-    </div>
+    <div></div>
   )
+
+};
+
+export async function getServerSideProps(context) {
+  try {
+    const items = await table.select({}).firstPage();
+    return {
+      props: {
+        data: minifyItems(items),
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        err: "Something went wrong",
+      },
+    };
+  }
 }
